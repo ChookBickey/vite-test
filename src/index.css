@@ -1,0 +1,160 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
+  'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
+  'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-top: 0;
+}
+
+img {
+  display: block;
+
+  max-width: 100%;
+}
+
+input,
+textarea {
+  font: inherit;
+
+  /* For firefox */
+  min-width: 0;
+}
+
+button {
+  font: inherit;
+
+  cursor: pointer;
+}
+
+/* ================== */
+
+/*
+   Color Palette:
+   Menu/Widget BG: #f7f7f7
+*/
+
+:root {
+  --textColor: #333;
+  --searchBorder: solid #d6d6d6 1px;
+
+  --highlight: #ebeaf3;
+  --selected: #d9d5d6;
+
+  --iconColor: initial;
+
+  --widgetBG: #f7f7f7;
+  --widgetBorder: solid #e3e3e3 1px;
+
+  --BG: #fff;
+
+  /* App Sections */
+  --libraryViewBG: #f1f1f1;
+}
+
+body {
+  color: var(--textColor);
+
+  background: var(--BG);
+}
+
+/* ================== */
+/* Defaults */
+.listDefaults {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.buttonDefaults {
+  color: inherit;
+
+  background: 0;
+  padding: 0;
+  border: 0;
+}
+
+.iconButton {
+  cursor: pointer;
+}
+
+/* ================== */
+
+.app {
+  --appSideSpace: .75em;
+
+  display: grid;
+  grid-template-rows: auto 1fr;
+
+  min-height: 100vh;
+}
+
+/* .smallLayout { */
+/*    display: grid; */
+/*    --sideSpace: .75em; */
+/*    grid-template-columns: minmax(var(--sideSpace), 1fr) minmax(1em, 100%) minmax( */
+/*          var(--sideSpace), */
+/*          1fr */
+/*       ); */
+
+/*    height: 100%; */
+/* } */
+
+/* .smallLayout > * { */
+/*    grid-column: 2 / -2; */
+/* } */
+
+/* ================== */
+
+.appHeader {
+  background: var(--widgetBG);
+  border-bottom: var(--widgetBorder);
+}
+
+.appHeaderLayout {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: var(--appSideSpace);
+}
+
+.directories {
+  display: grid;
+  grid-auto-flow: column;
+  grid-column-gap: .5em;
+}
+
+.directory {
+  font-size: 1.2rem;
+
+  cursor: pointer;
+
+  padding: .25em .5em;
+  border-radius: .25em;
+  margin: 0;
+}
+
+.directory:focus,
+.directory:hover {
+  background: var(--highlight);
+}
+
+/* Specificity */
+.directory.currentDirectory {
+  background: var(--selected);
+}
